@@ -4,6 +4,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 
 //our own importing
 import 'package:shop_app/components/horizontal_list_view.dart';
+import 'package:shop_app/components/Products.dart';
 
 void main(){
   runApp(
@@ -135,7 +136,15 @@ class _HomePageState extends State<HomePage> {
           new Padding(padding: const EdgeInsets.all(8.0),
           child: new Text('Categories',style: TextStyle(fontSize: 20.0),),
           ),
+
+          //Catagories
           HorizontalList(),
+
+          //Recent Views
+          Container(
+            height: 320,
+            child: Products(),
+          )
 
         ],
 
