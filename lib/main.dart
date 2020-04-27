@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
         dotSize: 4.0,
         indicatorBgPadding: 4.0,
         autoplay: false,
+        dotBgColor: Colors.transparent,
 
       ),
     );
@@ -73,7 +74,7 @@ class _HomePageState extends State<HomePage> {
               onTap: (){},
               child: ListTile(
                 title: Text('Home'),
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.home, color: Colors.red,),
               ),
             ),
 
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> {
               onTap: (){},
               child: ListTile(
                 title: Text('My Profile'),
-                leading: Icon(Icons.person),
+                leading: Icon(Icons.person, color: Colors.red,),
               ),
             ),
 
@@ -89,7 +90,7 @@ class _HomePageState extends State<HomePage> {
               onTap: (){},
               child: ListTile(
                 title: Text('My orders'),
-                leading: Icon(Icons.shopping_basket),
+                leading: Icon(Icons.shopping_basket, color:Colors.red),
               ),
             ),
 
@@ -97,7 +98,7 @@ class _HomePageState extends State<HomePage> {
               onTap: (){},
               child: ListTile(
                 title: Text('Categories'),
-                leading: Icon(Icons.dashboard),
+                leading: Icon(Icons.dashboard, color: Colors.red,),
               ),
             ),
 
@@ -105,7 +106,7 @@ class _HomePageState extends State<HomePage> {
               onTap: (){},
               child: ListTile(
                 title: Text('Favourites'),
-                leading: Icon(Icons.favorite),
+                leading: Icon(Icons.favorite, color: Colors.red,),
               ),
             ),
 

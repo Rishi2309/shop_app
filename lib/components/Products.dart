@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+
+import 'package:shop_app/pages/ProductDetails.dart';
+
 class Products extends StatefulWidget {
   @override
   _ProductsState createState() => _ProductsState();
@@ -99,41 +102,33 @@ class Single_prod extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Hero(
-          tag: prod_name,
-          child: Material(
+        tag: new Text('hero1'),
+        child: Material(
             child: InkWell(
-              onTap: () {},
-              child: GridTile(
-                  footer: Container(
-                    color: Colors.white70,
-                    child: ListTile(
-                      leading: Text(
-                        prod_name,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      title: Text(
-                        "\$$prod_price",
-                        style: TextStyle(
-                            color: Colors.red, fontWeight: FontWeight.w800),
-                      ),
-                      subtitle: Text(
-                        "\$$prod_old_price",
-                        style: TextStyle(
-                            color: Colors.black54,
-                            fontWeight: FontWeight.w800,
-                            decoration
-                                :TextDecoration.lineThrough),
-                      ),
-                    ),
-
+                onTap:() => Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new ProductDetails(
+                  product_detail_name: prod_name,
+                  product_detail_price: prod_price,
+                  product_detail_old_price: prod_old_price,
+                  product_detail_picture: prod_picture,
+                ))),
+        child: GridTile(
+            footer: Container(
+              color: Colors.white70,
+              child: new Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text(prod_name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0)),
                   ),
-                  child: Image.asset(
-                    prod_picture,
-                    fit: BoxFit.fitHeight,
-                  )
-                  ),
+                  new Text('\$${prod_price}', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0, color: Colors.red),)
+                ],
+              ),
             ),
-          )),
+            child: Image.asset(
+              prod_picture,
+              fit: BoxFit.cover,
+            )),
+      ),
+    )),
     );
   }
 }
