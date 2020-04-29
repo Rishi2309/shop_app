@@ -5,6 +5,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 //our own importing
 import 'package:shop_app/components/horizontal_list_view.dart';
 import 'package:shop_app/components/Products.dart';
+import 'package:shop_app/pages/cart.dart';
 
 void main(){
   runApp(
@@ -50,7 +51,8 @@ class _HomePageState extends State<HomePage> {
         title: Text('ShopApp'),
         actions: <Widget>[
           IconButton(icon: Icon(Icons.search, color: Colors.white,), onPressed: (){}),
-          IconButton(icon: Icon(Icons.shopping_cart, color: Colors.white,), onPressed: (){}),
+          IconButton(icon: Icon(Icons.shopping_cart, color: Colors.white,),
+              onPressed: (){Navigator.push(context, new MaterialPageRoute(builder: (context)=> new Cart()));}),
         ],
       ),
       drawer: new Drawer(
@@ -87,7 +89,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             InkWell(
-              onTap: (){},
+              onTap: (){Navigator.push(context, new MaterialPageRoute(builder: (context)=> new Cart()));},
               child: ListTile(
                 title: Text('My orders'),
                 leading: Icon(Icons.shopping_basket, color:Colors.red),
